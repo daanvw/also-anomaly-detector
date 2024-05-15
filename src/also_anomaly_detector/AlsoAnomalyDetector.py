@@ -1,5 +1,8 @@
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import Ridge
+from sklearn.isotonic import IsotonicRegression
+
 from sklearn.model_selection import cross_val_predict
 from sklearn.model_selection import KFold
 import numpy as np
@@ -8,7 +11,7 @@ VERBOSE = True
 
 
 class AlsoAnomalyDetector:
-    regressors = dict(dt=DecisionTreeRegressor, rf=RandomForestRegressor)
+    regressors = dict(dt=DecisionTreeRegressor, rf=RandomForestRegressor, ridge=Ridge, iso=IsotonicRegression)
 
     def __init__(
         self,
